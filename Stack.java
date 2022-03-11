@@ -9,7 +9,7 @@ public class Stack<T> {
 		arr = new Object[DEFAULT_SIZE];
 		this.size = DEFAULT_SIZE;
 	}
-	
+
 	public T push(T item) {
 		if(count==size) {
 			grow();
@@ -19,12 +19,22 @@ public class Stack<T> {
 		return item;
 	}
 	
+	public Object peek() {
+		return arr[count-1];
+	}
 	public Object pop() {
 		if(count == 0) {
 			return null;
 		}
 		count--;
 		return arr[count];
+	}
+	
+	public void clear() {
+		for(int i = 0;i<size;i++) {
+			arr[i] = null;
+		}
+		count = 0;
 	}
 	
 	public int getSize() {
@@ -39,6 +49,4 @@ public class Stack<T> {
 		}
 		arr = temp;
 	}
-	
-	
 }
