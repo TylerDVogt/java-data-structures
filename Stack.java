@@ -11,21 +11,21 @@ public class Stack<T> {
 	}
 	
 	/**
-	 * 
-	 * @param <T> item
-	 * @return <T> item
+	 * Inserts top element O(1)
+	 * @param <T> element
+	 * @return <T> element
 	 */
-	public T push(T item) {
+	public T push(T element) {
 		if(count==size) {
 			grow();
 		}
-		arr[count] = item;
+		arr[count] = element;
 		count++;
-		return item;
+		return element;
 	}
 	
 	/**
-	 * Peeks element on top of stack
+	 * Peeks element on top of stack without removing O(1)
 	 * @return Object
 	 */
 	public Object peek() {
@@ -33,7 +33,7 @@ public class Stack<T> {
 	}
 	
 	/**
-	 * Removes the top element and returns that object
+	 * Removes the top element and returns that element O(1)
 	 * @return Object
 	 */
 	public Object pop() {
@@ -55,13 +55,13 @@ public class Stack<T> {
 	}
 	
 	/**
-	 * 
+	 * Searches for specified element O(n)
 	 * @param <T> item
 	 * @return i - index or -1 if not found
 	 */
-	public int search(T item) {
+	public int search(T element) {
 		for(int i = 0;i<count;i++) {
-			if(arr[i] == item) {
+			if(arr[i] == element) {
 				return i;
 			}
 		}
